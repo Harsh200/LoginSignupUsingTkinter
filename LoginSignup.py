@@ -7,7 +7,7 @@ def signup():
     global roots
 
     roots=Tk()
-    roots.title={"Signup"}
+    roots.title=("Signup")
     instruction=Label(roots,text="Please enter new Credentials\n")
     instruction.grid(row=0,column=0,sticky=E)
 
@@ -40,4 +40,23 @@ def Login():
     global rootA
 
     rootA = Tk()
-    rootA.title = {"Login"}
+    rootA.title = ("Login")
+
+    instruction = Label(rootA, text="Please Login\n")
+    instruction.grid(sticky=E)
+
+    namel = Label(rootA, text="Username")
+    pwordl = Label(rootA, text="Password")
+    namel.grid(row=1, column=1, sticky=w)
+    pwordl.grid(row=2, column=0, sticky=w)
+
+    nameEl = Entry(rootA)
+    pwordEl = Entry(rootA, show='*')
+    nameEl.grid(row=1, column=1)
+    pwordEl.grid(row=2, column=1)
+
+
+    LoginButton=Button(rootA,text="Signup",command=FSSignup)
+    LoginButton.grid(columnspan=2,sticky=w)
+    rmuser=Button(rootA,text="Delete User",fg="Red",command=DeleteUser)
+    root.mainloop()
