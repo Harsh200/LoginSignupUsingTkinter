@@ -26,7 +26,7 @@ def signup():
     root.mainloop()
 
 def FSSignup():
-    with open(credits,'w') as fi
+    with open(credits,'w') as f:
         f.write(nameE.get())
         f.write('\n')
         f.write(pwordE.get())
@@ -64,7 +64,7 @@ def Login():
     rootA.mainloop()
 
 def CheckLogin():
-    with open(credits) as fi
+    with open(credits) as f:
         data=f.readlines()
         uname=data[0].rstrip()
         pword=data[1].rstrip()
@@ -77,6 +77,13 @@ def CheckLogin():
         rlbl.pack()
         r.mainloop()
     else:
+        r=Tk()
+        r.title('tD')
+        r.geometry('150x150')
+        rlbl=Label(r,text='\n[!] Invalid Login ')
+        rlbl.pack()
+        r.mainloop()
 
-
-
+def DelUser():
+    os.remove(credits)
+    rootA.destroy()
