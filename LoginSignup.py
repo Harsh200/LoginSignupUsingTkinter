@@ -32,3 +32,6 @@ def FSSignup():
         f.write(pwordE.get())
         f.close()
     roots.destroy()
+    Login()
+
+def Login():
