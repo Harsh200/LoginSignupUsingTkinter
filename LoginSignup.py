@@ -71,3 +71,8 @@ def CheckLogin():
 
     if nameEl.get()==uname and pwordEl.get()==pword
         r=Tk()
+        r.title('tD')
+        r.geometry('150x150')
+        rlbl=Label(r,text='\n[+] Logged IN')
+        rlbl.pack()
+
