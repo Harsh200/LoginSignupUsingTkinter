@@ -35,3 +35,6 @@ def FSSignup():
     Login()
 
 def Login():
+    global nameEl
+    global pwordEl
+    global rootA
