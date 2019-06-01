@@ -7,3 +7,4 @@ def signup():
     global roots
 
     roots=Tk()
+    roots.title={"Signup"}
