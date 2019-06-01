@@ -64,3 +64,10 @@ def Login():
     rootA.mainloop()
 
 def CheckLogin():
+    with open(credits) as fi
+        data=f.readlines()
+        uname=data[0].rstrip()
+        pword=data[1].rstrip()
+
+    if nameEl.get()==uname and pwordEl.get()==pword
+        r=Tk()
