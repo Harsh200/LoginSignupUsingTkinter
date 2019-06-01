@@ -13,8 +13,8 @@ def signup():
 
     namel=Label(roots,text="New Username")
     pwordl=Label(roots,text="New Password")
-    namel.grid(row=1,column=1,sticky=w)
-    pwordl.grid(row=2,column=0,sticky=w)
+    namel.grid(row=1,column=0,sticky=W)
+    pwordl.grid(row=2,column=0,sticky=W)
 
     nameE=Entry(roots)
     pwordE=Entry(roots,show='*')
@@ -22,8 +22,8 @@ def signup():
     pwordE.grid(row=2, column=1)
 
     signupButton=Button(roots,text="Signup",command=FSSignup)
-    signupButton.grid(columnspan=2,sticky=w)
-    root.mainloop()
+    signupButton.grid(columnspan=2,sticky=W)
+    roots.mainloop()
 
 def FSSignup():
     with open(credits,'w') as f:
@@ -47,8 +47,8 @@ def Login():
 
     namel = Label(rootA, text="Username")
     pwordl = Label(rootA, text="Password")
-    namel.grid(row=1, column=1, sticky=w)
-    pwordl.grid(row=2, column=0, sticky=w)
+    namel.grid(row=1, column=0, sticky=W)
+    pwordl.grid(row=2, column=0, sticky=W)
 
     nameEl = Entry(rootA)
     pwordEl = Entry(rootA, show='*')
@@ -56,10 +56,11 @@ def Login():
     pwordEl.grid(row=2, column=1)
 
 
-    LoginButton=Button(rootA,text="Signup",command=FSSignup)
-    LoginButton.grid(columnspan=2,sticky=w)
-    rmuser=Button(rootA,text="Delete User",fg="Red",command=DeleteUser)
-    rmuser.grid(columnspan=2,sticky=w)
+    LoginButton=Button(rootA, text="Login",command=CheckLogin)
+    LoginButton.grid(columnspan=2,sticky=W)
+
+    rmuser=Button(rootA,text="Delete User",fg="Red",command=DelUser)
+    rmuser.grid(columnspan=2,sticky=W)
 
     rootA.mainloop()
 
@@ -87,3 +88,9 @@ def CheckLogin():
 def DelUser():
     os.remove(credits)
     rootA.destroy()
+    signup()
+
+if os.path.isfile(credits):
+    Login()
+else:
+    signup()
