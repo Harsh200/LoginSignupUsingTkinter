@@ -38,3 +38,6 @@ def Login():
     global nameEl
     global pwordEl
     global rootA
+
+    rootA = Tk()
+    rootA.title = {"Login"}
