@@ -59,4 +59,8 @@ def Login():
     LoginButton=Button(rootA,text="Signup",command=FSSignup)
     LoginButton.grid(columnspan=2,sticky=w)
     rmuser=Button(rootA,text="Delete User",fg="Red",command=DeleteUser)
-    root.mainloop()
+    rmuser.grid(columnspan=2,sticky=w)
+
+    rootA.mainloop()
+
+CheckLogin():
