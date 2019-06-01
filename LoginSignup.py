@@ -24,3 +24,10 @@ def signup():
     signupButton=Button(roots,text="Signup",command=FSSignup)
     signupButton.grid(columnspan=2,sticky=w)
     root.mainloop()
+
+def FSSignup():
+    with open(credits,'w') as fi
+        f.write(nameE.get())
+        f.write('\n')
+        f.write(pwordE.get())
+        f.close()
